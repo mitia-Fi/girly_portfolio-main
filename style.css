@@ -417,7 +417,12 @@ body::before {
 }
 
 .about-box {
-  background: rgba(10, 10, 20, 0.35);
+  background: transparent;
+  /* background: linear-gradient(
+    346deg,
+    rgba(253, 217, 235, 1) 30%,
+    rgba(253, 198, 225, 1) 49%
+      ); */
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   padding: 35px;
@@ -425,9 +430,9 @@ body::before {
   font-size: 18px;
   line-height: 1.8;
   color: var(--color-black);
-  border: 3px solid rgba(99, 26, 63, 0.25);
+  /* border: 3px solid rgba(99, 26, 63, 0.25);
   box-shadow: 0 0 20px rgba(99, 26, 63, 0.15),
-              0 8px 25px rgba(0, 0, 0, 0.35);
+              0 8px 25px rgba(0, 0, 0, 0.35); */
 }
 
 .sub-title {
