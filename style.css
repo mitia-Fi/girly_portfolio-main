@@ -141,7 +141,7 @@ body::before {
 .navbar-brand h2 {
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
-  color: #631A3F;
+  color: #FFFFFf;
   margin: 0;
   font-size: var(--font-size-xl);
   text-shadow: 0 0 10px rgba(99, 26, 63, 0.4);
@@ -160,6 +160,14 @@ body::before {
   text-decoration: none;
   position: relative;
   text-shadow: 0 0 5px rgba(99, 26, 63, 0.3);
+}
+
+.brand-link{
+  color:#FFFFFF
+}
+
+.brand-link:hover{
+  color:  #631A3F;
 }
 
 .nav-link:hover {
@@ -2280,4 +2288,144 @@ textarea.form-control {
 
 .effect-btn i {
   font-size: 20px;
+}
+
+.lang-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.lang-list li {
+  margin-bottom: 6px;
+}
+
+.level {
+  color: #FDD9EB; /* Ajustable selon ton thème */
+  font-weight: 500;
+}
+
+.skill-badge:hover .level {
+  color: #8A2A5E;
+}
+
+.formations-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Style pour les titres de formations */
+.formations-list li strong {
+  color: #FDC6E1;
+  font-weight: 600;
+  font-size: 1rem;
+  display: block;
+  text-align: left;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+/* Pas de marge supplémentaire pour le premier titre */
+.formations-list li:first-child strong {
+  margin-top: 4px;
+}
+
+/* Simple ligne discrète entre les formations */
+.formations-list li:has(strong):not(:first-child) {
+  border-top: 1px solid rgba(253, 198, 225, 0.15);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+/* Sous-compétences compactes */
+.formations-list li:not(:has(strong)) {
+  color: var(--color-text-light);
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Petite puce discrète */
+.formations-list li:not(:has(strong))::before {
+  content: "•";
+  color: #FDC6E1;
+  position: absolute;
+  left: 8px;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* Les certifications (DALF C2, etc.) restent sur une ligne */
+.formations-list li strong {
+  white-space: nowrap;
+}
+
+/* Effets hover très légers */
+.formations-list li strong:hover {
+  color: #FFFFFF;
+  transition: color var(--duration-fast) ease;
+}
+
+.formations-list li:not(:has(strong)):hover {
+  color: #FDD9EB;
+}
+
+/* ============================================
+   UNIFICATION FINALE DES POLICES
+   ============================================ */
+
+/* S'assurer que TOUS les boutons utilisent Inter */
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  font-family: var(--font-family-elegant) !important;
+}
+
+/* S'assurer que TOUS les inputs/textarea utilisent Inter */
+input,
+textarea,
+select,
+.form-control {
+  font-family: var(--font-family-elegant) !important;
+}
+
+/* S'assurer que TOUS les titres utilisent Poppins */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title,
+.card-title,
+.edu-item h4,
+.category-title,
+.achievement-title,
+.contact-info h3,
+.fan-title,
+.sub-title {
+  font-family: var(--font-family-heading) !important;
+}
+
+/* S'assurer que TOUT le texte de base utilise Inter */
+body,
+p,
+span,
+li,
+a,
+.nav-link,
+.hero-subtitle,
+.about-box,
+.edu-school,
+.edu-year,
+.achievement-description,
+.contact-info p,
+.social-link span,
+.notification-message {
+  font-family: var(--font-family-elegant) !important;
 }
