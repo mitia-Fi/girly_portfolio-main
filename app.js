@@ -1262,19 +1262,16 @@ document.addEventListener('click', (e) => {
 });
 
 // ===================================================================
-// FOND ÉTOILÉ STATIQUE
+// FOND ÉTOILÉ AVEC SCINTILLEMENT
 // ===================================================================
 function createStaticStars() {
     const starsContainer = document.createElement('div');
     starsContainer.className = 'stars-background';
     document.body.appendChild(starsContainer);
-  
+
     const starCount = 150;
-  
-    for (let i = 0; i < starCount; i++) {
-      createStar(starsContainer);
-    }
-  
+    for (let i = 0; i < starCount; i++) createStar(starsContainer);
+
     createHeroStars();
 }
 
@@ -1286,21 +1283,16 @@ function createStar(container) {
     const size = sizes[Math.floor(Math.random() * sizes.length)];
     star.classList.add(size);
     
-    const colorRoll = Math.random();
-    if (colorRoll < 0.7) {
-      star.classList.add('color-4');
-    } else if (colorRoll < 0.8) {
-      star.classList.add('color-1');
-    } else if (colorRoll < 0.9) {
-      star.classList.add('color-2');
-    } else {
-      star.classList.add('color-3');
-    }
+    const colors = ['color-1', 'color-2', 'color-3', 'color-4'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    star.style.background = color === 'color-1' ? '#FDC6E1' :
+                           color === 'color-2' ? '#FDD9EB' :
+                           color === 'color-3' ? '#FDC6E1' : '#FFFFFF';
     
     star.style.left = `${Math.random() * 100}vw`;
     star.style.top = `${Math.random() * 100}vh`;
     
-    if (Math.random() < 0.3) {
+    if (Math.random() < 0.4) {
       star.classList.add('pulse');
       star.style.animationDelay = `${Math.random() * 5}s`;
     }
@@ -1308,37 +1300,23 @@ function createStar(container) {
     container.appendChild(star);
 }
 
+
 function createHeroStars() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
-  
     const heroStars = document.createElement('div');
     heroStars.className = 'stars-background';
-    heroStars.style.opacity = '0.6';
+    heroStars.style.opacity='0.6';
     hero.appendChild(heroStars);
-  
-    const heroStarCount = 80;
-    
-    for (let i = 0; i < heroStarCount; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      
-      const sizes = ['small', 'medium', 'large'];
-      const size = sizes[Math.floor(Math.random() * sizes.length)];
-      star.classList.add(size);
-      
-      const colors = ['color-1', 'color-2', 'color-3', 'color-4'];
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      star.classList.add(color);
-      
-      star.style.left = `${Math.random() * 100}%`;
-      star.style.top = `${Math.random() * 100}%`;
-      
-      if (Math.random() < 0.5) {
-        star.classList.add('pulse');
-        star.style.animationDelay = `${Math.random() * 4}s`;
-      }
-      
-      heroStars.appendChild(star);
+
+    for(let i=0;i<80;i++){
+        const star=document.createElement('div'); star.className='star';
+        const sizes=['small','medium','large'];
+        star.classList.add(sizes[Math.floor(Math.random()*sizes.length)]);
+        const colors=['color-1','color-2','color-3','color-4'];
+        star.classList.add(colors[Math.floor(Math.random()*colors.length)]);
+        star.style.left=`${Math.random()*100}%`; star.style.top=`${Math.random()*100}%`;
+        if(Math.random()<0.5){ const duration=1+Math.random()*3; star.style.animation=`twinkle ${duration}s infinite ease-in-out`; star.style.animationDelay=`${Math.random()*4}s`; }
+        heroStars.appendChild(star);
     }
 }
