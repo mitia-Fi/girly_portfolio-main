@@ -430,9 +430,13 @@ body::before {
   font-size: 18px;
   line-height: 1.8;
   color: var(--color-black);
-  /* border: 3px solid rgba(99, 26, 63, 0.25);
+  width: 90%;       /* prend 90% de son conteneur parent */
+  max-width: 900px; /* limite maximale */
+  min-height: 200px; /* optionnel : minimum de hauteur */
+  margin: 0 auto;    /* centre horizontalement */
+  border: 3px solid rgba(99, 26, 63, 0.25);
   box-shadow: 0 0 20px rgba(99, 26, 63, 0.15),
-              0 8px 25px rgba(0, 0, 0, 0.35); */
+              0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
 .sub-title {
