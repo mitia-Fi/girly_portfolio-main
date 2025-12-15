@@ -2010,6 +2010,7 @@ textarea.form-control {
     text-align: center;
   }
   
+  
   .contact-content {
       grid-template-columns: 1fr;
       gap: var(--space-32);
